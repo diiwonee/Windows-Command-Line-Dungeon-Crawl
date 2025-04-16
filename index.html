@@ -3,115 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLI Dungeon Crawl - Assignment Report</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>CLI Dungeon Crawl Assignment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: none;
+        }
+        
+        #treeContent {
+            white-space: pre;
+            font-family: monospace;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .active {
+            display: block;
+        }
+        
+        ol {
+            margin-left: 20px;
+        }
+        
+        .report-section {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>CLI Dungeon Crawl Adventure</h1>
-            <p class="subtitle">A directory fortress exploration with command line</p>
-        </header>
-
-        <div class="tab-container">
-            <div class="tabs">
-                <button class="tab-button active" data-tab="interactive-map">Interactive Map</button>
-                <button class="tab-button" data-tab="research-feedback">Research & Feedback</button>
-            </div>
+    <h1>CLI Dungeon Crawl Assignment</h1>
+    
+    <div class="button-container">
+        <button id="reportBtn">Show Report</button>
+        <button id="treeBtn">Show Dungeon Map</button>
+    </div>
+    
+    <div id="reportContent" class="content">
+        <h2>Week 3 (March 19th-24th) - Windows Command Line Dungeon Crawl</h2>
+        
+        <p>While doing this assignment I've encountered many issues and problems that I would be able to do without additional help</p>
+        
+        <div class="report-section">
+            <ol>
+                <li>First, I didn't understand what to do in general when I looked at the screen, so I asked ChatGpt which didn't help a lot cause there were a lot of extra stuff that is not needed for the assignment. Then I listened in the class and figured out how to get started</li>
+                
+                <li>After that, I asked Chat again and after couple of tries I figured out how to use and work on it. I continued up to the moment where I had to move the StoneKey. I asked ChatGpt how to do that and still couldn't, I tried to do it with many different ways but neither worked. Then I left the assignment because I felt lask of motivation and like all what I am doing is useless</li>
+                
+                <li>After week or two I tried to do it again but with the help of my friend. She helped me to move the stonekey with this move C:\EntranceGrounds\OuterWalls\StorageRoom\StoneKey.key C:\EntranceGrounds\OuterWalls\InnerKeep\</li>
+            </ol>
         </div>
-
-        <div class="tab-content">
-            <!-- Interactive Map Tab -->
-            <div class="tab-pane active" id="interactive-map">
-                <div class="dungeon-container">
-                    <div class="cli-interface">
-                        <div class="cli-header">
-                            <span>Command Line Interface</span>
-                        </div>
-                        <div class="cli-content" id="cli-display">
-                            <p class="command">C:\> dir</p>
-                            <p class="response">Directory of C:\</p>
-                            <p class="response">FortressLore.txt</p>
-                            <p class="response">README.md</p>
-                            <p class="response">EntranceGrounds</p>
-                        </div>
-                        <div class="cli-input">
-                            <span class="prompt">C:\></span>
-                            <span class="cursor">█</span>
-                        </div>
-                    </div>
-
-                    <div class="map-container">
-                        <div class="dungeon-map" id="dungeon-map">
-                            <!-- Dungeon map will be generated with JavaScript -->
-                        </div>
-                        <div class="map-legend">
-                            <div class="legend-item">
-                                <div class="legend-color directory"></div>
-                                <span>Directory</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color text-file"></div>
-                                <span>.txt File</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color info-file"></div>
-                                <span>.info File</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color key-file"></div>
-                                <span>.key File</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color look-file"></div>
-                                <span>.look File</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color tome-file"></div>
-                                <span>.tome File</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color md-file"></div>
-                                <span>.md File</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="info-panel" id="info-panel">
-                    <h2 id="info-title">Select a location</h2>
-                    <div id="info-content">
-                        <p>Click on any location in the map to see details about it.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Research & Feedback Tab -->
-            <div class="tab-pane" id="research-feedback">
-                <div class="research-container">
-                    <h2>Week 3 (March 19th-24th) - Windows Command Line Dungeon Crawl</h2>
-                    <p>While doing this assignment I've encountered many issues and problems that I would be able to do without additional help:</p>
-                    
-                    <ol>
-                        <li>First, I didn't understand what to do in general when I looked at the screen, so I asked ChatGpt which didn't help a lot cause there were a lot of extra stuff that is not needed for the assignment. Then I listened in the class and figured out how to get started.</li>
-                        
-                        <li>After that, I asked Chat again and after couple of tries I figured out how to use and work on it. I continued up to the moment where I had to move the StoneKey. I asked ChatGpt how to do that and still couldn't, I tried to do it with many different ways but neither worked. Then I left the assignment because I felt lack of motivation and like all what I am doing is useless.</li>
-                        
-                        <li>After week or two I tried to do it again but with the help of my friend. She helped me to move the stonekey with this move <code>C:\EntranceGrounds\OuterWalls\StorageRoom\StoneKey.key C:\EntranceGrounds\OuterWalls\InnerKeep\</code></li>
-                    </ol>
-                    
-                    <p>After, I didn't face any major problems. I opened the treasure by using the link left there and changing the <code>https://your_teacher_s_site/treasure.html</code> - your_teacher_s_site part to your actual website name and keeping the treasure.html part.</p>
-                    
-                    <p>After, I got the treasure animation.</p>
-                </div>
-            </div>
+        
+        <div class="report-section">
+            <ol start="4">
+                <li>After, I didn't face any major problems. I opened the treasure by using the link left there and changing the https://your_teacher_s_site/treasure.html  - your_teacher_s_site part to your actual website name and keeping the treasure.html part.</li>
+                
+                <li>After, I got the treasure animation</li>
+            </ol>
         </div>
-
-        <footer>
-            <p>Created for IBM Week 3 Assignment - CLI Dungeon Crawl</p>
-        </footer>
+    </div>
+    
+    <div id="treeContent" class="content">
+C:\ 
+├── FortressLore.txt 
+├── README.md 
+└── EntranceGrounds    
+    ├── Gatehouse.info    
+    └── OuterWalls        
+        ├── CrumblingTower.look        
+        ├── StorageRoom        
+        └── InnerKeep            
+            ├── GreatHall.info            
+            ├── OldRecords.tome            
+            ├── OpenedDoor            
+            │   └── ForbiddenLibrary            
+            │       └── ReadingChamber            
+            │           └── Treasure.txt            
+            └── StoneKey.key 
+C:\>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        const reportBtn = document.getElementById('reportBtn');
+        const treeBtn = document.getElementById('treeBtn');
+        const reportContent = document.getElementById('reportContent');
+        const treeContent = document.getElementById('treeContent');
+
+        reportBtn.addEventListener('click', function() {
+            reportContent.classList.add('active');
+            treeContent.classList.remove('active');
+        });
+
+        treeBtn.addEventListener('click', function() {
+            treeContent.classList.add('active');
+            reportContent.classList.remove('active');
+        });
+    </script>
 </body>
 </html>
